@@ -1,0 +1,24 @@
+<div class="input-group">
+  <span class="input-group-text">Search Pokemon by Name</span>
+  <input
+    type="text"
+    aria-label="First name"
+    class="form-control"
+    [(ngModel)]="search"
+  />
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card h-100">
+        <app-pokemon-card
+          style="display: flex"
+          *ngFor="let pokemon of pokemonService.pokemons; index as i"
+          [pokemon]="pokemon.name"
+          [numero]="i + 1"
+        >
+        </app-pokemon-card>
+      </div>
+    </div>
+  </div>
+</div>
